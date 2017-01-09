@@ -4,8 +4,9 @@
     <attr name="titleText" format="string"></attr>
     <attr name="titleTextColor" format="color"/>
     <attr name="titleTextSize" format="dimension"/>
-
+    <!--name为生命的"属性集合"名，名字可以随便取-->
     <declare-styleable name="CustomTitleView">
+        <!--声明属性，name为名称，format为取值类型-->
         <attr name="titleText"/>
         <attr name="titleTextColor"/>
         <attr name="titleTextSize"/>

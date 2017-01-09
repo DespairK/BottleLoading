@@ -45,6 +45,10 @@ public class CustomTitleView extends View {
 
     //获得自定义样式
     public CustomTitleView(Context context, AttributeSet attrs, int defStyleAttr) {
+        /**
+         * attrs参数就是在xml文件中<declare-styleable>标签
+         * 即属性集合的标签，名字为自定
+         */
         super(context, attrs, defStyleAttr);
         //获得自定义的样式
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CustomTitleView, defStyleAttr, 0);
@@ -63,6 +67,8 @@ public class CustomTitleView extends View {
                     break;
             }
         }
+
+        //将TypedArray对象回收
         a.recycle();
 
 //        获得绘制的宽高
@@ -84,12 +90,28 @@ public class CustomTitleView extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
-        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+        /***
+         * widthMeasureSpec和heightMeasureSpec这两个参数包含宽高和测量模式信息，
+         *
+         */
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);//获取测量模式
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);//获取尺寸
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
         int width;
         int height;
+        /**
+         * 获取到的尺寸并不是最终的尺寸大小，而是父view提供的参考大小
+         * 测量模式一共有三种参数：
+         * UNSPECIFIED：父容器没有对当前view进行任何限制，当前View可以取任意尺寸
+         * EXACTLY：当前的尺寸就是当前view应该取得尺寸
+         * AT_MOST：当前尺寸是当前view能取得最大尺寸
+         *
+         * 测量模式和布局文件的宽高之间的关系：
+         * match_parent-->EXACTLY.
+         * wrap_content-->AT_MOST
+         * 固定尺寸-->EXACTLY
+         */
         if (widthMode == MeasureSpec.EXACTLY) {
             width = widthSize;
         } else {
