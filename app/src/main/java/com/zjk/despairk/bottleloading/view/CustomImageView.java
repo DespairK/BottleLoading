@@ -142,7 +142,7 @@ public class CustomImageView extends View {
         } else {
             //计算居中矩形的范围
             rect.left = mWidth / 2 - mImage.getWidth() / 2;
-            rect.right = mWidth / 2 - mImage.getWidth() / 2;
+            rect.right = mWidth / 2 + mImage.getWidth() / 2;
             rect.top = (mHeight - mTextBound.height()) / 2 - mImage.getHeight() / 2;
             rect.bottom = (mHeight - mTextBound.height()) / 2 + mImage.getHeight() / 2;
             canvas.drawBitmap(mImage, null, rect, mPaint);
