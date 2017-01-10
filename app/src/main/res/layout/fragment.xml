@@ -29,5 +29,14 @@
 
     </com.zjk.despairk.bottleloading.view.NewLinearLayout>
 
-
+    <com.zjk.despairk.bottleloading.view.CustomImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        cust:image="@mipmap/ic_launcher"
+        cust:imageScaleType="center"
+        cust:titleText="hello android ! "
+        cust:titleTextColor="#ff0000"
+        cust:titleTextSize="30sp" />
 </LinearLayout>
