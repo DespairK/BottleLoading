@@ -113,6 +113,7 @@ public class CustomImageView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
 //        super.onDraw(canvas);
+        //边框
         mPaint.setStrokeWidth(4);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setColor(Color.CYAN);
